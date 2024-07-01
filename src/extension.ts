@@ -46,7 +46,7 @@ export function activate(context: vscode.ExtensionContext) {
                     "step",
                     "delvar",
                     "is",
-                    "var", "const", "func",
+                    "var", "const", "func", "class",
                     "true", "false", "null"
                 ];
                 
@@ -77,6 +77,15 @@ export function activate(context: vscode.ExtensionContext) {
                 functions.forEach(function_ => {
                     completionItems.push(
                         new vscode.CompletionItem(function_, vscode.CompletionItemKind.Function)
+                    );
+                });
+
+                const classesPattern = /\b(class)\s+([a-zA-Z_][a-zA-Z0-9_]*)\b/g;
+                const classes = extractIndentifiers(text, classesPattern, 2);
+
+                classes.forEach(class_ => {
+                    completionItems.push(
+                        new vscode.CompletionItem(class_, vscode.CompletionItemKind.Class)
                     );
                 });
 
