@@ -3,7 +3,7 @@
     "displayName": "NakaScript IntelliSense",
     "description": "IntelliSense for my programming language, NakaScript",
     "publisher": "ohretro-naka",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "icon": "./assets/logo_icon.png",
     "repository": {
         "type": "git",
